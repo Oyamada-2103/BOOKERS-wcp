@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   # rails6章 編集機能db更新
   patch 'books/new/:id' => 'books#update', as: 'update_book'
   
+  # rails8章 削除機能の追加
+  delete 'books/new/:id' => 'books#destroy', as: 'destroy_book'
 end

@@ -4,18 +4,21 @@
 
 <!--ここに最近の投稿一覧が入る-->
 <h1>Books</h1>
+<span>
+<p>title</p>
+<p>body</p>
+</span>
 <% @books.each do |book| %>
-  <p>title</p>
-  <span><%= book.title %></span>
-  <p>body</p>
-  <span><%= book.body %></span>
+
   <span>
+    <%= book.title %>
+    <%= book.body %>
     <%= link_to "Show", "/books/new/#{book.id}" %>
     <!--<%= link_to "Show", books_new_path(book.id) %> この記述だとうまくいかなかった-->
+    <%= link_to "Edit", "/books/new/#{book.id}/edit" %>
+    <%= link_to "Destroy", "/books/new/#{book.id}" ,  method: :delete, "data-confirm" => "Are you sure?" %>
+  <br>
   </span>
-
-  <p>Edit</p>
-  <p>Destroy</p>
 
 <% end %>
 

@@ -38,6 +38,13 @@ class BooksController < ApplicationController
     redirect_to '/books/new'
   end
 
+  # rails 8章削除機能追加
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to '/books/new'
+  end
+
 #これが１番下に来るようにする
   # 4章で追加
   private
