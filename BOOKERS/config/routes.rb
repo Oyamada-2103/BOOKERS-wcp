@@ -17,4 +17,11 @@ Rails.application.routes.draw do
   # rails5章 id
   # .../todolists/1 や .../todolists/3 に該当する
   get 'books/new/:id' => 'books#show', as: 'book'
+
+  # rails6章 編集機能
+  get 'books/new/:id/edit' => 'books#edit', as: 'edit_book'
+
+  # rails6章 編集機能db更新
+  patch 'books/new/:id' => 'books#update', as: 'update_book'
+  
 end

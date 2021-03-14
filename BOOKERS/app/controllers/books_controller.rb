@@ -17,13 +17,26 @@ class BooksController < ApplicationController
     # ２. データをデータベースに保存するためのsaveメソッド実行
     book.save
     # ３. トップ画面へリダイレクト
-    redirect_to '/top'
+    # redirect_to '/top'
+    # ５章で追加 詳細画面へリダイレクト
+    redirect_to '/books/new'
   end
 
   def show
     @book = Book.find(params[:id])
   end
 
+  # rails6章edit機能
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  # rails6章editのdb更新
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to '/books/new'
+  end
 
 #これが１番下に来るようにする
   # 4章で追加
