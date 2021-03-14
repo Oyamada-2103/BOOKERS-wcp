@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
 
   # rails 2章
-  get 'top' => 'homes#top'
+  # get 'top' => 'homes#top'
+  
+  # rails ルートパス 設定
+  root to: 'homes#top'
 
   # rails 4章
   post 'books' => 'books#create'
@@ -23,7 +26,7 @@ Rails.application.routes.draw do
 
   # rails6章 編集機能db更新
   patch 'books/new/:id' => 'books#update', as: 'update_book'
-  
+
   # rails8章 削除機能の追加
   delete 'books/new/:id' => 'books#destroy', as: 'destroy_book'
 end
