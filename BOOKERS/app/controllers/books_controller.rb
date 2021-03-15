@@ -19,7 +19,9 @@ class BooksController < ApplicationController
     # ３. トップ画面へリダイレクト
     # redirect_to '/top'
     # ５章で追加 詳細画面へリダイレクト
-    redirect_to '/books/new'
+    redirect_to book_path(book.id), notice:'Book was successfully created.'
+    # redirect_to '/books/new/:id'
+
   end
 
   def show
@@ -35,7 +37,7 @@ class BooksController < ApplicationController
   def update
     book = Book.find(params[:id])
     book.update(book_params)
-    redirect_to '/books/new'
+    redirect_to book_path(book.id), notice:'Book was successfully updated.'
   end
 
   # rails 8章削除機能追加

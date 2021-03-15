@@ -1,3 +1,5 @@
+
+
 <h1>Editing Book</h1>
 <%= form_with model:@book, url:"/books/new/#{@book.id}", local:true do |f| %>
   <h4>Title</h4>
@@ -7,6 +9,8 @@
   <br>
   <%= f.submit 'Update Book' %>
   <br>
-
+<p>
+<a href="/books/new/#{@book.id}">Show</a> | <a href="/books/new">Back</a>
+</p>
 
 <% end %>

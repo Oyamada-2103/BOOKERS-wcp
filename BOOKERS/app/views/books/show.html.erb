@@ -1,2 +1,12 @@
+<!--#サクセスメッセージの表示-->
+<p id="notice">
+ <%= notice %>
+</p>
+
 <p><strong>Title:</strong> <%= @book.title %></p>
 <p><strong>Body:</strong> <%= @book.body %></p>
+
+
+<p>
+<a href="/books/new/:id/edit">Edit</a>    | <a href="/books/new">Back</a>
+</p>

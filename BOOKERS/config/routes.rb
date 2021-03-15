@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   # rails 2章
   # get 'top' => 'homes#top'
-  
   # rails ルートパス 設定
   root to: 'homes#top'
 
