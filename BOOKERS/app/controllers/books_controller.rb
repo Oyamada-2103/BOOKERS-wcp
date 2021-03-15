@@ -15,13 +15,15 @@ class BooksController < ApplicationController
     # １. データを新規登録するためのインスタンス作成
     book = Book.new(book_params)
     # ２. データをデータベースに保存するためのsaveメソッド実行
-    book.save
-    # ３. トップ画面へリダイレクト
-    # redirect_to '/top'
-    # ５章で追加 詳細画面へリダイレクト
-    redirect_to book_path(book.id), notice:'Book was successfully created.'
-    # redirect_to '/books/new/:id'
-
+    if book.save
+      # ３. トップ画面へリダイレクト
+      # redirect_to '/top'
+      # ５章で追加 詳細画面へリダイレクト
+      redirect_to book_path(book.id), notice:'Book was successfully created.'
+      # redirect_to '/books/new/:id'
+    else
+      render "new"
+    end
   end
 
   def show

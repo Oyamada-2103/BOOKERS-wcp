@@ -8,5 +8,5 @@
 
 
 <p>
-<a href="/books/new/:id/edit">Edit</a>    | <a href="/books/new">Back</a>
+<%= link_to "Edit", "/books/new/#{@book.id}/edit" %> | <%= link_to "Back", "/books/new" %>
 </p>

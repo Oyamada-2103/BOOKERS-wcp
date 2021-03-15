@@ -33,12 +33,22 @@
     </tbody>
   </table>
 
+
+<% if model(変更).errors.any? %>
+  <div model（変更） ="alert alert-warning">
+    <ul>
+      <% model（変更）.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <!--rails4章-->
 <h2>New book</h2>
 <!-- form_with部分 -->
 <%= form_with model: @book, url:books_path, local:true do |f| %>
-  <h4>title</h4>
-  <%= f.text_field :title %>
+<%= f.text_field :title %>
   <h4>body</h4>
   <%= f.text_area :body %>
   <br>
