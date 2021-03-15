@@ -22,10 +22,9 @@
           <td><%= book.title %></td>
           <td><%= book.body %></td>
           <td>
-            <%= link_to "Show", "/books/new/#{book.id}" %>
-            <!--<%= link_to "Show", books_new_path(book.id) %> この記述だとうまくいかなかった-->
-            <%= link_to "Edit", "/books/new/#{book.id}/edit" %>
-            <%= link_to "Destroy", "/books/new/#{book.id}" ,  method: :delete, "data-confirm" => "Are you sure?" %>
+            <%= link_to "Show", "/books/#{book.id}" %>
+            <%= link_to "Edit", "/books/#{book.id}/edit" %>
+            <%= link_to "Destroy", "/books/#{book.id}" ,  method: :delete, "data-confirm" => "Are you sure?" %>
             <br>
           </td>
         </tr>
@@ -34,10 +33,10 @@
   </table>
 
 
-<% if model(変更).errors.any? %>
-  <div model（変更） ="alert alert-warning">
+<% if @book.errors.any? %>
+  <div id ="error_explanation">
     <ul>
-      <% model（変更）.errors.full_messages.each do |message| %>
+      <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>

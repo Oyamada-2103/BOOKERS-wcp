@@ -35,16 +35,25 @@ h1 {
     font-weight: bold;
 }
 
-p {
-    ont-family: verdana, arial, helvetica, sans-serif;
+p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
     line-height: 18px;
+    margin: 33px;
+}
+
+p {
     display: block;
+    }
+
+ul {
+    display: block;
+    list-style-type: disc;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    margin: 33px;
+    padding-inline-start: 40px;
 }
 
 table {
@@ -84,4 +93,13 @@ td {
 
 h2 {
     margin: 33px 0;
+}
+
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
 }
