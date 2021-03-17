@@ -23,7 +23,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id), notice:'Book was successfully created.'
       # redirect_to '/books/new/:id'
     else
-      render "new"
+      render "index"
     end
   end
 
@@ -34,6 +34,7 @@ class BooksController < ApplicationController
   # rails6章edit機能
   def edit
     @book = Book.find(params[:id])
+    
   end
 
   # rails6章editのdb更新
